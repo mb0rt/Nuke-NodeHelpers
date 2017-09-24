@@ -4,8 +4,6 @@
 ##########################################
 ################################## IMPORTS
 import nuke
-import nukescripts
-import os
 
 
 ##########################################
@@ -53,4 +51,5 @@ def auto_label_helper():
 
 ##########################################
 ########################## START LISTENING
-nuke.addOnUserCreate( auto_label_helper )
+def start():
+	nuke.addOnUserCreate( auto_label_helper )
