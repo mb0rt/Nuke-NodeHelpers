@@ -36,7 +36,7 @@
 
 009. ScanlineRender:
 
-![](/docs/autolabel/scanlinerender_node.gif)
+![](/docs/autolabel/scanlineRender_node.gif)
 
 010. Camera:
 
