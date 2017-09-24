@@ -2,7 +2,8 @@
 
 1. Download this GitHub repository using the green “Clone or download” button. Select “Download Zip” and then extract the contents.
 2. Copy contents into your home directory’s “.nuke” folder.
-  ```Linux: /home/[login name]/.nuke<br>
+  ```
+  Linux: /home/[login name]/.nuke<br>
   Mac OS X: /Users/[login name]/.nuke<br>
   Windows: C:\Users\[user name]\.nuke
   ```
