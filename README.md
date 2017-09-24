@@ -2,36 +2,42 @@
 
 > Adds some helpful info on nodes label knob:
 
-1. Blur:
+001. Blur:
 
 ![](/docs/autolabel/blur_node.gif)
 
-2. Defocus:
+002. Defocus:
 
 ![](/docs/autolabel/defocus_node.gif)
 
-3. FrameRange:
+003. FrameRange:
 
 ![](/docs/autolabel/framerange_node.gif)
 
-4. Retime:
-![](/docs/autolabel/retime.gif)
+004. Retime:
 
-5. Shuffle:
-![](/docs/autolabel/shuffle.gif)
+![](/docs/autolabel/retime_node.gif)
 
-6. Shuffle Copy:
-![](/docs/autolabel/shufflecopy.gif)
+005. Shuffle:
 
-7. Multiply:
-![](/docs/autolabel/multiply.gif)
+![](/docs/autolabel/shuffle_node.gif)
 
-8. Transform:
-![](/docs/autolabel/Transform.gif)
+006. Shuffle Copy:
 
-9. ScanlineRender:
-![](/docs/autolabel/scanlinerender.gif)
+![](/docs/autolabel/shufflecopy_node.gif)
 
-10. Camera:
+007. Multiply:
+
+![](/docs/autolabel/multiply_node.gif)
+
+008. Transform:
+
+![](/docs/autolabel/Transform_node.gif)
+
+009. ScanlineRender:
+
+![](/docs/autolabel/scanlinerender_node.gif)
+
+010. Camera:
 
 ![](/docs/autolabel/camera_node.gif)
