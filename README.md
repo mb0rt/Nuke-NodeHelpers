@@ -1,11 +1,9 @@
-![](/docs/giphy.gif)
-
-
-## Auto Label:
+## 1.0 Auto Label:
 
 > Adds some helpful info on nodes label knob:
 
 1. Blur:
+
 ![](/docs/autolabel/blur_node.gif)
 
 1. Defocus:
