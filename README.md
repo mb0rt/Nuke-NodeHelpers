@@ -3,8 +3,8 @@
 1. Download this GitHub repository using the green “Clone or download” button. Select “Download Zip” and then extract the contents.
 2. Copy contents into your home directory’s “.nuke” folder.
   ```
-  Linux: /home/[login name]/.nuke<br>
-  Mac OS X: /Users/[login name]/.nuke<br>
+  Linux: /home/[login name]/.nuke
+  Mac OS X: /Users/[login name]/.nuke
   Windows: C:\Users\[user name]\.nuke
   ```
 3. If the destination folder already contains an “menu.py” file, open that file in a text editor and append the contents.
