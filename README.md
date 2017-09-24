@@ -32,7 +32,7 @@
 
 008. Transform:
 
-![](/docs/autolabel/Transform_node.gif)
+![](/docs/autolabel/transform_node.gif)
 
 009. ScanlineRender:
 
