@@ -1,35 +1,36 @@
 ![](/docs/giphy.gif)
 
 
-Auto Label:
+## Auto Label:
 
-Adds some helpful info on nodes label knob:
-Blur:
+> Adds some helpful info on nodes label knob:
+
+1. Blur:
 ![](/docs/autolabel/blur_node.gif)
 
-Defocus:
+1. Defocus:
 ![](/docs/autolabel/defocus.gif)
 
-FrameRange:
+1. FrameRange:
 ![](/docs/autolabel/framerange.gif)
 
-Retime:
+1. Retime:
 ![](/docs/autolabel/retime.gif)
 
-Shuffle:
+1. Shuffle:
 ![](/docs/autolabel/shuffle.gif)
 
-Shuffle Copy:
+1. Shuffle Copy:
 ![](/docs/autolabel/shufflecopy.gif)
 
-Multiply:
+1. Multiply:
 ![](/docs/autolabel/multiply.gif)
 
-Transform:
+1. Transform:
 ![](/docs/autolabel/Transform.gif)
 
-ScanlineRender:
+1. ScanlineRender:
 ![](/docs/autolabel/scanlinerender.gif)
 
-Camera:
+1. Camera:
 ![](/docs/autolabel/camera.gif)
