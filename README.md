@@ -7,10 +7,12 @@
 ![](/docs/autolabel/blur_node.gif)
 
 1. Defocus:
-![](/docs/autolabel/defocus.gif)
+
+![](/docs/autolabel/defocus_node.gif)
 
 1. FrameRange:
-![](/docs/autolabel/framerange.gif)
+
+![](/docs/autolabel/framerange_node.gif)
 
 1. Retime:
 ![](/docs/autolabel/retime.gif)
@@ -31,4 +33,5 @@
 ![](/docs/autolabel/scanlinerender.gif)
 
 1. Camera:
-![](/docs/autolabel/camera.gif)
+
+![](/docs/autolabel/camera_node.gif)
