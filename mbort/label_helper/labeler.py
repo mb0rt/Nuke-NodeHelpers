@@ -35,7 +35,7 @@ def auto_label_helper():
 		label = 'value: [value value]'
 
 	elif node_class == 'Saturation':
-		label = 'value: [value saturation]''
+		label = 'value: [value saturation]'
 
 	elif node_class == 'Transform':
 		label = 'T: [value translate] | R: [value rotate] | S: [value scale]'
