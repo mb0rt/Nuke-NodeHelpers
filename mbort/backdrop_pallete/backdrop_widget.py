@@ -3,12 +3,15 @@
 import os
 import sys
 import re
-
+import webbrowser
 
 
 ##########################################
 ############################ VENDOR IMPORT
-sys.path.append( os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)),'../../vendor' ) ) )
+vendor_path = os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)),'../../vendor' ) )
+if vendor_path not in sys.path:
+	sys.path.append( vendor_path )
+
 import swatch
 
 
@@ -20,15 +23,15 @@ from PySide import QtGui, QtCore
 
 
 
-
 ##########################################
 ############################## MAIN WIDGET
 class ColorSwatch( QtGui.QWidget ):
+	ADOBE_URL 		= "https://color.adobe.com/explore/?filter=most-popular&time=month"
 	FOLDER_THEMES 	= os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)), 'themes' ) )
-	FOLDER_ICONS 	= os.path.abspath( os.path.join(nuke.EXE_PATH,'../plugins/icons') )
+	FOLDER_ICONS 	= os.path.abspath( os.path.join( nuke.EXE_PATH,'../plugins/icons' ) )
 
 	SWATCH_TOTAL	= 5
-	SWATCH_CSS 		= "background-color: rgb(%03d,%03d,%03d); border: none;"
+	SWATCH_CSS 		= "background-color: rgb(%03d,%03d,%03d); border: none; height: 40px;"
 	SWATCH_COLOR 	= (58,58,58) # RGB
 
 
@@ -41,7 +44,7 @@ class ColorSwatch( QtGui.QWidget ):
 
 		# Persistent Storage Settings
 		self.qsettings = QtCore.QSettings()
-		self.qsettings.beginGroup( "backdrop_pallete" )
+		self.qsettings.beginGroup( "backdrop_palette" )
 
 		# get last palette selected
 		last_palette_file = self.qsettings.value( 'palette_file', '' )
@@ -98,8 +101,26 @@ class ColorSwatch( QtGui.QWidget ):
 		## ADD DIVIDER
 		main_layout.addWidget( self._create_divider() )
 
+		# ADD BUTTONS
+		settings_layout = QtGui.QHBoxLayout()
+		settings_layout.setAlignment( QtCore.Qt.AlignTop )
+		main_layout.addLayout( settings_layout )
+
+		more_themes_btn = QtGui.QPushButton( "get more color palettes.." )
+		more_themes_btn.setToolTip( "Download or Create new Color Palettes!" )
+		more_themes_btn.clicked.connect( self._get_palettes )
+		settings_layout.addWidget( more_themes_btn )
+
+		open_themes_folder_btn = QtGui.QPushButton( "open palettes folder.." )
+		open_themes_folder_btn.setToolTip( "Open Folder Where All Color Palette Files Resides!" )
+		open_themes_folder_btn.clicked.connect( self._open_palette_folder )
+		settings_layout.addWidget( open_themes_folder_btn )
+
+		## ADD DIVIDER
+		main_layout.addWidget( self._create_divider() )
+
 		## ADD ICONS
-		label = QtGui.QLabel("icon name:")
+		label = QtGui.QLabel("add icon:")
 		main_layout.addWidget( label )
 
 		completer = QtGui.QCompleter()
@@ -125,6 +146,20 @@ class ColorSwatch( QtGui.QWidget ):
 
 	##########################################
 	################################### THEMES
+	def _get_palettes( self ):
+		webbrowser.open( self.ADOBE_URL )
+
+	def _open_palette_folder( self ):
+		if sys.platform == 'win32':
+			os.system( 'explorer %s' % self.FOLDER_THEMES.replace('/','\\') )
+
+		elif sys.platform == 'darwin':
+			os.system( 'open %s' % self.FOLDER_THEMES.replace('\\','/') )
+
+		else :
+			os.system( 'xdg-open "%s"' % self.FOLDER_THEMES.replace('\\','/') )
+
+
 	def _on_theme_selected( self, index ):
 		comboBox_widget = self.sender()
 		palette_file = os.path.join( self.FOLDER_THEMES, comboBox_widget.currentText() )
