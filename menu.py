@@ -2,8 +2,8 @@
 
 ################################
 ############### backdrop pallete
-from mbort import backdrop_pallete
-backdrop_pallete.backdrop.start()
+from mbort import backdrop_palette
+backdrop_palette.backdrop.start()
 
 
 ################################

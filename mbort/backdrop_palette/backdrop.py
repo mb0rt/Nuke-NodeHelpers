@@ -54,8 +54,8 @@ def on_backdrop_created( node ):
 		node.knobs()[ target ].clearFlag( nuke.INVISIBLE )
 		node.knobs()[ target ].setVisible( False )
 
-	# create pallete/color/icon/position widget
-	theme_knob = nuke.PyCustom_Knob( "Colors", "", "backdrop_pallete.backdrop_widget.ColorSwatch( nuke.thisNode() )" )
+	# create palette/color/icon/position widget
+	theme_knob = nuke.PyCustom_Knob( "Colors", "", "backdrop_palette.backdrop_widget.ColorSwatch( nuke.thisNode() )" )
 	theme_knob.setFlag( nuke.STARTLINE )
 	node.addKnob( theme_knob )
 
