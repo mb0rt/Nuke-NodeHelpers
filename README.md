@@ -26,7 +26,7 @@
 
 ### Auto-Label
 
-Adds helpful label info automatically for you:
+Adds for several nodes helpful label info automatically:
 ![](/docs/autolabel/blur_node.gif)
 
 [`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/2.0-Auto-Label)
