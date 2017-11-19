@@ -34,7 +34,7 @@ Adds helpful label info automatically for you:
 -------------------------------------------------------------------------------------------
 
 
-### BackDrop-Palette
+### Backdrop-Palette
 
 Backdrop node add-on script that manages Background Color, Icons & Position-Size:
 ![](/docs/backdrop_palette/change_colors.gif)
