@@ -25,7 +25,7 @@
 
 ### Auto-Label
 
-> Adds some helpful info on several nodes label knob:
+Adds some helpful info on several nodes label knob:
 ![](/docs/autolabel/blur_node.gif)
 
 [`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/2.0-Auto-Label)
@@ -36,7 +36,7 @@
 
 ### BackDrop-Palette
 
-> Backdrop node add-on script that manages Colors/Icons/Position-Size.
+Backdrop node add-on script that manages Colors/Icons/Position-Size.
 ![](/docs/backdrop_palette/change_colors.gif)
 
 [`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/3.0-Backdrop-Palette)
