@@ -41,7 +41,7 @@ def auto_label_helper():
 		label = 'T: [value translate] | R: [value rotate] | S: [value scale]'
 
 	elif node_class == 'ScanlineRender':
-		label = 'proj. mode: [value projection_mode]'
+		label = '[value projection_mode]\nSamples: [value samples] | Shutter: [value shutter]'
 
 	elif node_class == 'Camera2':
 		label = '[value focal]mm'
