@@ -6,7 +6,8 @@
 
 
 
-### Installation
+### Installation 
+-------------------------------------------------------------------------------------------
 
 1. Download this GitHub repository using the green “Clone or download” button. Select “Download Zip” and then extract the contents.
 2. Copy contents into your home directory’s “.nuke” folder.
@@ -19,7 +20,9 @@
 
 
 
+
 ### Auto-Label
+-------------------------------------------------------------------------------------------
 
 > Adds some helpful info on several nodes label knob:
 ![](/docs/autolabel/blur_node.gif)
@@ -28,7 +31,9 @@
 
 
 
+
 ### BackDrop-Palette
+-------------------------------------------------------------------------------------------
 
 > Backdrop node add-on script that manages Colors/Icons/Position-Size.
 ![](/docs/backdrop_palette/change_colors.gif)
