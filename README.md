@@ -1,4 +1,11 @@
-## Nuke Installation
+### Contents
+* [Installation](#installation)
+* [Auto-Label](#auto-label)
+* [Backdrop-Palette](#backdrop-palette)
+
+
+
+#### Installation
 
 1. Download this GitHub repository using the green “Clone or download” button. Select “Download Zip” and then extract the contents.
 2. Copy contents into your home directory’s “.nuke” folder.
@@ -10,46 +17,18 @@
 3. If the destination folder already contains an “menu.py” file, open that file in a text editor and append the contents.
 
 
-## 1.0 Auto Label:
+#### Auto-Label
 
-> Adds some helpful info on nodes label knob:
-
-001. Blur:
-
+> Adds some helpful info on several nodes label knob:
 ![](/docs/autolabel/blur_node.gif)
 
-002. Defocus:
+[`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/2.0-Auto-Label)
 
-![](/docs/autolabel/defocus_node.gif)
 
-003. FrameRange:
 
-![](/docs/autolabel/framerange_node.gif)
+#### BackDrop-Palette
 
-004. Retime:
+> Backdrop node add-on script that manages Colors/Icons/Position-Size.
+![](/docs/backdrop_palette/change_colors.gif)
 
-![](/docs/autolabel/retime_node.gif)
-
-005. Shuffle:
-
-![](/docs/autolabel/shuffle_node.gif)
-
-006. Shuffle Copy:
-
-![](/docs/autolabel/shufflecopy_node.gif)
-
-007. Multiply:
-
-![](/docs/autolabel/multiply_node.gif)
-
-008. Transform:
-
-![](/docs/autolabel/transform_node.gif)
-
-009. ScanlineRender:
-
-![](/docs/autolabel/scanlineRender_node.gif)
-
-010. Camera:
-
-![](/docs/autolabel/camera_node.gif)
+[`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/3.0-Backdrop-Palette)
