@@ -4,6 +4,7 @@
 * [Installation](#installation)
 * [Auto-Label](#auto-label)
 * [Backdrop-Palette](#backdrop-palette)
+* [Write-Helpers](#write-helpers)
 
 
 -------------------------------------------------------------------------------------------
@@ -46,7 +47,7 @@ Backdrop node add-on script that manages Background Color, Icons & Position-Size
 -------------------------------------------------------------------------------------------
 
 
-### Write Helpers
+### Write-Helpers
 
 Commands to help you manage a little bit better 'Write' outputs:
 
