@@ -18,7 +18,7 @@
   Mac OS X: /Users/[login name]/.nuke
   Windows: C:\Users\[user name]\.nuke
   ```
-3. If the destination folder already contains an “menu.py” file, open that file in a text editor and append the contents.
+3. If the destination folder already contains an "init.py" and/or “menu.py” file, open those files in a text editor and append the contents.
 
 
 -------------------------------------------------------------------------------------------
