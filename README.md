@@ -43,6 +43,9 @@ Backdrop node add-on script that manages Background Color, Icons & Position-Size
 [`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/3.0-Backdrop-Palette)
 
 
+-------------------------------------------------------------------------------------------
+
+
 ### Write Helpers
 
 Commands to help you manage a little bit better 'Write' outputs:
