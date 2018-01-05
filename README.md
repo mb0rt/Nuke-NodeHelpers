@@ -54,3 +54,6 @@ Commands to help you manage a little bit better 'Write' outputs:
 ![](/docs/write_helper/overview.gif)
 
 [`more info..`](https://github.com/mb0rt/Nuke-NodeHelpers/wiki/4.0-Write-Helpers)
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-111996978-1/Nuke-NodeHelpers/readme?pixel)](https://github.com/igrigorik/ga-beacon)
