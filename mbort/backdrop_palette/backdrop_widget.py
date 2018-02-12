@@ -8,27 +8,29 @@ import webbrowser
 
 ##########################################
 ############################ VENDOR IMPORT
-vendor_path = os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)),'../../vendor' ) )
-if vendor_path not in sys.path:
-	sys.path.append( vendor_path )
-
-import swatch
-
+from ..vendor import swatch
 
 
 ##########################################
 ############################## NUKE IMPORT
 import nuke
-from PySide import QtGui, QtCore
 
+try: # Nuke 8,9,10
+	import PySide.QtCore as QtCore
+	import PySide.QtGui as QtGui
+	import PySide.QtGui as QtWidgets
+except: # Nuke 11+
+	import PySide2.QtCore as QtCore
+	import PySide2.QtGui as QtGui
+	import PySide2.QtWidgets as QtWidgets
 
 
 ##########################################
 ############################## MAIN WIDGET
-class ColorSwatch( QtGui.QWidget ):
+class ColorSwatch( QtWidgets.QWidget ):
 	ADOBE_URL 		= "https://color.adobe.com/explore/?filter=most-popular&time=month"
 	FOLDER_THEMES 	= os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)), 'themes' ) )
-	FOLDER_ICONS 	= os.path.abspath( os.path.join( nuke.EXE_PATH,'../plugins/icons' ) )
+	FOLDER_ICONS 	= os.path.abspath( os.path.join( nuke.EXE_PATH,'..', 'plugins', 'icons' ) )
 
 	SWATCH_TOTAL	= 5
 	SWATCH_CSS 		= "background-color: rgb(%03d,%03d,%03d); border: none; height: 40px;"
@@ -36,7 +38,7 @@ class ColorSwatch( QtGui.QWidget ):
 
 
 	##########################################
-	def __init__( self, node ):
+	def __init__( self, node=None ):
 		super(self.__class__, self).__init__()
 
 		# store current node
@@ -64,33 +66,33 @@ class ColorSwatch( QtGui.QWidget ):
 	############################# CREATE KNOBS
 	def _create_layout( self ):
 		# Create Layout
-		main_layout = QtGui.QVBoxLayout( self )
+		main_layout = QtWidgets.QVBoxLayout( self )
 
 		## ADD DIVIDER
 		main_layout.addWidget( self._create_divider() )
 
 		## ADD COLOR PALETTE
-		label = QtGui.QLabel("color palette:")
+		label = QtWidgets.QLabel("color palette:")
 		main_layout.addWidget( label )
 
-		model = QtGui.QFileSystemModel()
+		model = QtWidgets.QFileSystemModel()
 		model.setFilter( QtCore.QDir.NoDotAndDotDot | QtCore.QDir.Files )
 		model.setNameFilters( ['*.ase'] )
 		model_index = model.setRootPath( self.FOLDER_THEMES )
 
-		self.theme_combox = QtGui.QComboBox( self )
+		self.theme_combox = QtWidgets.QComboBox( self )
 		self.theme_combox.setModel( model )
 		self.theme_combox.setRootModelIndex( model_index )
 		self.theme_combox.currentIndexChanged.connect( self._on_theme_selected )
 		main_layout.addWidget( self.theme_combox )
 
 		## ADD COLOR SWATCHES
-		color_chooser_layout = QtGui.QHBoxLayout()
+		color_chooser_layout = QtWidgets.QHBoxLayout()
 		color_chooser_layout.setAlignment( QtCore.Qt.AlignTop )
 		main_layout.addLayout( color_chooser_layout )
 
 		for i in range( self.SWATCH_TOTAL ):
-			color_knob = QtGui.QPushButton()
+			color_knob = QtWidgets.QPushButton()
 			color_knob.clicked.connect( self.color_knob_click )
 			color_knob.setToolTip( "Click to Select This Color!" )
 			color_knob.setStyleSheet( self.SWATCH_CSS % (self.SWATCH_COLOR[0], self.SWATCH_COLOR[1], self.SWATCH_COLOR[2]) )
@@ -102,16 +104,16 @@ class ColorSwatch( QtGui.QWidget ):
 		main_layout.addWidget( self._create_divider() )
 
 		# ADD BUTTONS
-		settings_layout = QtGui.QHBoxLayout()
+		settings_layout = QtWidgets.QHBoxLayout()
 		settings_layout.setAlignment( QtCore.Qt.AlignTop )
 		main_layout.addLayout( settings_layout )
 
-		more_themes_btn = QtGui.QPushButton( "get more color palettes.." )
+		more_themes_btn = QtWidgets.QPushButton( "get more color palettes.." )
 		more_themes_btn.setToolTip( "Download or Create new Color Palettes!" )
 		more_themes_btn.clicked.connect( self._get_palettes )
 		settings_layout.addWidget( more_themes_btn )
 
-		open_themes_folder_btn = QtGui.QPushButton( "open palettes folder.." )
+		open_themes_folder_btn = QtWidgets.QPushButton( "open palettes folder.." )
 		open_themes_folder_btn.setToolTip( "Open Folder Where All Color Palette Files Resides!" )
 		open_themes_folder_btn.clicked.connect( self._open_palette_folder )
 		settings_layout.addWidget( open_themes_folder_btn )
@@ -120,16 +122,16 @@ class ColorSwatch( QtGui.QWidget ):
 		main_layout.addWidget( self._create_divider() )
 
 		## ADD ICONS
-		label = QtGui.QLabel("add icon:")
+		label = QtWidgets.QLabel("add icon:")
 		main_layout.addWidget( label )
 
-		completer = QtGui.QCompleter()
-		completer.setCompletionMode( QtGui.QCompleter.PopupCompletion )
+		completer = QtWidgets.QCompleter()
+		completer.setCompletionMode( QtWidgets.QCompleter.PopupCompletion )
 		completer.setCaseSensitivity( QtCore.Qt.CaseInsensitive )
 		completer.setModel( self.create_icons_model() )
 		completer.activated.connect( self._on_completion_activated, QtCore.Qt.QueuedConnection )
 
-		self.icon_edit = QtGui.QLineEdit()
+		self.icon_edit = QtWidgets.QLineEdit()
 		self.icon_edit.setCompleter( completer )
 		self.icon_edit.returnPressed.connect( self.insert_icon )
 		self.icon_edit.setToolTip( "start typing..." )
@@ -138,9 +140,9 @@ class ColorSwatch( QtGui.QWidget ):
 
 
 	def _create_divider( self ):
-		line = QtGui.QFrame( self )
-		line.setFrameShape( QtGui.QFrame.HLine )
-		line.setFrameShadow( QtGui.QFrame.Sunken )
+		line = QtWidgets.QFrame( self )
+		line.setFrameShape( QtWidgets.QFrame.HLine )
+		line.setFrameShadow( QtWidgets.QFrame.Sunken )
 		return line
 
 
@@ -208,13 +210,13 @@ class ColorSwatch( QtGui.QWidget ):
 	##########################################
 	#################################### ICONS
 	def create_icons_model( self ):
-		icons_list = [ ico[:-4] for ico in os.listdir( self.FOLDER_ICONS ) if ico.lower().endswith('.png') ]
+		icons_list = [ ico[:-4] for ico in os.listdir( self.FOLDER_ICONS ) if ico.lower().endswith('.png') ] if os.path.exists( self.FOLDER_ICONS ) else []
 
 		model = QtGui.QStandardItemModel()
 		model.setRowCount( len(icons_list) )
 		model.setColumnCount( 1 )
 
-		row = 0
+		row = 0n
 		for ico in icons_list:
 			ico_path = os.path.join( self.FOLDER_ICONS, ico + '.png' )
 
