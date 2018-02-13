@@ -30,7 +30,7 @@ except: # Nuke 11+
 class ColorSwatch( QtWidgets.QWidget ):
 	ADOBE_URL 		= "https://color.adobe.com/explore/?filter=most-popular&time=month"
 	FOLDER_THEMES 	= os.path.abspath( os.path.join( os.path.dirname(os.path.realpath(__file__)), 'themes' ) )
-	FOLDER_ICONS 	= os.path.abspath( os.path.join( nuke.EXE_PATH,'..', 'plugins', 'icons' ) )
+	FOLDER_ICONS 	= os.path.abspath( os.path.join( nuke.EXE_PATH, '..', 'plugins', 'icons' ) )
 
 	SWATCH_TOTAL	= 5
 	SWATCH_CSS 		= "background-color: rgb(%03d,%03d,%03d); border: none; height: 40px;"
@@ -216,7 +216,7 @@ class ColorSwatch( QtWidgets.QWidget ):
 		model.setRowCount( len(icons_list) )
 		model.setColumnCount( 1 )
 
-		row = 0n
+		row = 0
 		for ico in icons_list:
 			ico_path = os.path.join( self.FOLDER_ICONS, ico + '.png' )
 
