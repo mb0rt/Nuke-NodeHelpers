@@ -157,5 +157,5 @@ def preview_on_rv( rv_player="/Applications/RV64.app/Contents/MacOS/RV64" ):
 			rv_arguments.append( '-' + operation_type.lower()[0:4] )
 
 	## OPEN RV
-	command_line = rv_player + ' ' + ' '.join( rv_arguments ) + ' ' + ' '.join( sequence_list )
+	command_line = '"'+rv_player+'"' + ' ' + ' '.join( rv_arguments ) + ' ' + ' '.join( sequence_list )
 	subprocess.Popen( command_line, shell=True )
