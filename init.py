@@ -1,6 +1,6 @@
-################################
-################### Write helper
+# ###############################
+# ################## Write helper
 from mbort import write_helper
 
-# auto creates write path before rendering
+# auto creates output directories before rendering
 write_helper.auto_create.start()
